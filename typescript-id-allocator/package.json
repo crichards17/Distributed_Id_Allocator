@@ -37,6 +37,7 @@
 		"@fluidframework/common-definitions": "^0.20.1",
 		"@types/uuid": "^9.0.1",
 		"uuid": "^9.0.0",
-		"wasm-id-allocator": "file:./dist/wasm/"
+		"wasm-id-allocator": "file:./dist/wasm/",
+		"wasm-tracing-allocator": "^0.1.1"
 	}
 }

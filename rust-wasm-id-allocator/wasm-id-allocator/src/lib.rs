@@ -42,6 +42,18 @@ use wasm_bindgen::prelude::*;
 //     }
 // }
 
+#[cfg(debug_assertions)]
+#[cfg(target_arch = "wasm32")]
+use std::alloc::System;
+#[cfg(debug_assertions)]
+#[cfg(target_arch = "wasm32")]
+use wasm_tracing_allocator::WasmTracingAllocator;
+
+#[cfg(debug_assertions)]
+#[cfg(target_arch = "wasm32")]
+#[global_allocator]
+static GLOBAL_ALLOCATOR: WasmTracingAllocator<System> = WasmTracingAllocator(System);
+
 #[wasm_bindgen]
 #[derive(Debug)]
 /// A wrapper compressor for efficient API translation from/into WASM.
